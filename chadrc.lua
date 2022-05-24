@@ -1,37 +1,38 @@
 local M = {}
 
-local override = require "custom.override"
-local userPlugins = require "custom.plugins"
+local override = require("custom.override")
+local userPlugins = require("custom.plugins")
 
 M.plugins = {
 
-   options = {
-      lspconfig = {
-         setup_lspconf = "custom.plugins.lspconfig",
-      },
+	options = {
+		lspconfig = {
+			setup_lspconf = "custom.plugins.lspconfig",
+		},
 
-      statusline = {
-         separator_style = "round",
-      },
-   },
+		statusline = {
+			separator_style = "round",
+		},
+	},
 
-   override = {
-      ["kyazdani42/nvim-tree.lua"] = override.nvimtree,
-      ["nvim-treesitter/nvim-treesitter"] = override.treesitter,
-      ["lukas-reineke/indent-blankline.nvim"] = override.blankline,
-   },
+	override = {
+		["NvChad/nvterm"] = override.nvterm,
+		["kyazdani42/nvim-tree.lua"] = override.nvimtree,
+		["nvim-treesitter/nvim-treesitter"] = override.treesitter,
+		["lukas-reineke/indent-blankline.nvim"] = override.blankline,
+	},
 
-   user = userPlugins,
+	user = userPlugins,
 }
 
 M.ui = {
-   theme = "onedark",
+	theme = "one_light",
 }
 
 M.options = {
-   user = function()
-      require "custom.options"
-   end,
+	user = function()
+		require("custom.options")
+	end,
 }
 
 return M
